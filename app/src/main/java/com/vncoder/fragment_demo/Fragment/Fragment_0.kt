@@ -47,7 +47,7 @@ class Fragment_0 : Fragment() {
 
         btn_fragment1.setOnClickListener {
             var note : String
-            note = "this is Fragment 1"
+            note = "this is Fragment 1 by ViewModel"
             model!!.setMsgCommunicator(note)
             var fragment_1 = Fragment_1()
 
