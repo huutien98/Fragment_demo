@@ -15,12 +15,12 @@ class MainActivity : AppCompatActivity(),Comunicator_interface {
         setContentView(R.layout.activity_main)
 
 
-
     }
 
     override fun passData(data: String) {
         val bundle = Bundle()
-        bundle.putString("input_txt",data)
+        bundle.putString("input",data)
+
         val transaction = this.supportFragmentManager.beginTransaction()
         val fragment2 = Fragment_2()
         fragment2.arguments = bundle

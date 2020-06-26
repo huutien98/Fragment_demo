@@ -20,7 +20,9 @@ class Fragment_2 : Fragment() {
     }
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
          val root = inflater.inflate(R.layout.fragment_2,container,false)
-            inputText = arguments?.getString("input_txt")
+
+
+            inputText = arguments?.getString("input")
             var  tv_fragment2 = root.findViewById<View>(R.id.fragment_tv2) as TextView
             tv_fragment2.setText(inputText)
         return root

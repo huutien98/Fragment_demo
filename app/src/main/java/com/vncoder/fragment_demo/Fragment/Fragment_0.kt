@@ -63,14 +63,14 @@ class Fragment_0 : Fragment() {
 
         btn_fragment2.setOnClickListener {
             var note = "this is fragment 2 by interface"
-            interf.passData("input_txt")
+            interf.passData(note)
 
-            var fragment2 = fragmentManager?.beginTransaction()
-            fragment2?.replace(
-                R.id.rightPanel,
-                Fragment_2()
-            )
-            fragment2?.commit()
+//            var fragment2 = fragmentManager?.beginTransaction()
+//            fragment2?.replace(
+//                R.id.rightPanel,
+//                Fragment_2()
+//            )
+//            fragment2?.commit()
         }
 
 
