@@ -1,6 +1,7 @@
 package com.vncoder.fragment_demo.Fragment
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.lifecycle.ViewModelProviders
 import com.vncoder.fragment_demo.*
+import com.vncoder.fragment_demo.Item.ItemObject
 
 
 class Fragment_0 : Fragment() {
@@ -23,8 +25,6 @@ class Fragment_0 : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -35,8 +35,8 @@ class Fragment_0 : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?): View? {
         val root = inflater.inflate(R.layout.fragment_0,container,false)
-        interf = activity as Comunicator_interface
 
+        interf = activity as Comunicator_interface
 
         var btn_fragment1 = root.findViewById<View>(R.id.btn_fragment1) as Button
         var btn_fragment2 = root.findViewById<View>(R.id.btn_fragment2) as Button
@@ -46,8 +46,11 @@ class Fragment_0 : Fragment() {
         var btn_fragment6 = root.findViewById<View>(R.id.btn_fragment6) as Button
 
         btn_fragment1.setOnClickListener {
-            var note : String
-            note = "this is Fragment 1 by ViewModel"
+            var title = "FRAGMENT 1"
+            interf.passActivity(title)
+
+
+            var note = "this is Fragment 1 by ViewModel"
             model!!.setMsgCommunicator(note)
             var fragment_1 = Fragment_1()
 
@@ -59,9 +62,10 @@ class Fragment_0 : Fragment() {
             fragment1?.commit()
         }
 
-
-
         btn_fragment2.setOnClickListener {
+            var title = "FRAGMENT 2"
+            interf.passActivity(title)
+
             var note = "this is fragment 2 by interface"
             interf.passData(note)
 
@@ -74,24 +78,86 @@ class Fragment_0 : Fragment() {
         }
 
 
-
         btn_fragment3.setOnClickListener {
-            var fragment3 = fragmentManager?.beginTransaction()
-            fragment3?.replace(
-                R.id.rightPanel,
-                Fragment_3()
-            )
-            fragment3?.commit()
+            var title = "FRAGMENT 3"
+            interf.passActivity(title)
+//            var fragment3 = fragmentManager?.beginTransaction()
+//            fragment3?.replace(
+//                R.id.rightPanel,
+//                Fragment_3()
+//            )
+//            fragment3?.commit()
+
+            var image = R.drawable.ic_baseline_account_circle_24
+            interf.passDataImage(image)
         }
+
+
         btn_fragment4.setOnClickListener {
-            var fragment4 = fragmentManager?.beginTransaction()
-            fragment4?.replace(
-                R.id.rightPanel,
-                Fragment_4()
-            )
-            fragment4?.commit()
+            var title = "FRAGMENT 4"
+            interf.passActivity(title)
+
+//            var fragment4 = fragmentManager?.beginTransaction()
+//            fragment4?.replace(
+//                R.id.rightPanel,
+//                Fragment_4()
+//            )
+//            fragment4?.commit()
+
+            val ListData = arrayListOf<ItemObject>()
+            var item = ItemObject()
+
+            item.img = R.drawable.ic_samsung
+            item.title = "SAMSUNG"
+            ListData.add(item)
+            item = ItemObject()
+
+            item.img = R.drawable.ic_adidas
+            item.title = "ADIDAS"
+            ListData.add(item)
+            item = ItemObject()
+
+            item.img = R.drawable.ic_apple
+            item.title = "APPLE"
+            ListData.add(item)
+            item = ItemObject()
+
+            item.img = R.drawable.ic_nike
+            item.title = "NIKE"
+            ListData.add(item)
+            item = ItemObject()
+
+            item.img = R.drawable.ic_xiaomi
+            item.title = "XIAOMI"
+            ListData.add(item)
+            item = ItemObject()
+
+            item.img = R.drawable.ic_tiktok
+            item.title = "TIKTOK"
+            ListData.add(item)
+            item = ItemObject()
+
+            item.img = R.drawable.ic_youtube
+            item.title = "YOUTUBE"
+            ListData.add(item)
+            item = ItemObject()
+
+            item.img = R.drawable.ic_github
+            item.title = "GITHUB"
+            ListData.add(item)
+            item = ItemObject()
+
+
+            interf.passDataList(ListData)
         }
+
+
+
+
         btn_fragment5.setOnClickListener {
+            var title = "FRAGMENT 5"
+            interf.passActivity(title)
+
             var fragment5 = fragmentManager?.beginTransaction()
             fragment5?.replace(
                 R.id.rightPanel,
@@ -100,6 +166,9 @@ class Fragment_0 : Fragment() {
             fragment5?.commit()
         }
         btn_fragment6.setOnClickListener {
+            var title = "FRAGMENT 6"
+            interf.passActivity(title)
+
             var fragment6 = fragmentManager?.beginTransaction()
             fragment6?.replace(
                 R.id.rightPanel,

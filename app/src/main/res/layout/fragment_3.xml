@@ -7,8 +7,8 @@
     tools:context=".Fragment.Fragment_3">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:textColor="@color/redFF0000"
+    <ImageView
+        android:id="@+id/img_fragment3"
         android:textSize="50dp"
         android:gravity="center"
         android:layout_gravity="center"
