@@ -17,8 +17,6 @@ class MainActivity : AppCompatActivity(),Comunicator_interface   {
         setContentView(R.layout.activity_main)
 
 
-
-
     }
 
 

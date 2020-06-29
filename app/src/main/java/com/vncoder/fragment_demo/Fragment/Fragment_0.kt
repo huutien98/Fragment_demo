@@ -49,7 +49,6 @@ class Fragment_0 : Fragment() {
             var title = "FRAGMENT 1"
             interf.passActivity(title)
 
-
             var note = "this is Fragment 1 by ViewModel"
             model!!.setMsgCommunicator(note)
             var fragment_1 = Fragment_1()
@@ -152,8 +151,6 @@ class Fragment_0 : Fragment() {
         }
 
 
-
-
         btn_fragment5.setOnClickListener {
             var title = "FRAGMENT 5"
             interf.passActivity(title)
@@ -165,16 +162,21 @@ class Fragment_0 : Fragment() {
             )
             fragment5?.commit()
         }
+
+
         btn_fragment6.setOnClickListener {
             var title = "FRAGMENT 6"
             interf.passActivity(title)
 
-            var fragment6 = fragmentManager?.beginTransaction()
-            fragment6?.replace(
-                R.id.rightPanel,
-                Fragment_6()
-            )
-            fragment6?.commit()
+            val intent = Intent(context,MainActivity2::class.java)
+            startActivity(intent)
+
+//            var fragment6 = fragmentManager?.beginTransaction()
+//            fragment6?.replace(
+//                R.id.rightPanel,
+//                Fragment_6()
+//            )
+//            fragment6?.commit()
         }
 
         return root
