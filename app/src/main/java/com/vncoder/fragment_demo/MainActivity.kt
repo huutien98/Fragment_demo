@@ -1,24 +1,23 @@
 package com.vncoder.fragment_demo
 
-import android.graphics.ImageDecoder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.vncoder.fragment_demo.Fragment.Fragment_2
 import com.vncoder.fragment_demo.Fragment.Fragment_3
 import com.vncoder.fragment_demo.Fragment.Fragment_4
 import com.vncoder.fragment_demo.Item.ItemObject
+import com.vncoder.fragment_demo.PassData.ComunicatorInterface
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(),Comunicator_interface   {
+class MainActivity : AppCompatActivity(),
+    ComunicatorInterface {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
 
     }
-
 
     override fun passActivity(title: String) {
         val bundle = Bundle()

@@ -1,9 +1,9 @@
-package com.vncoder.fragment_demo
+package com.vncoder.fragment_demo.PassData
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class Communicator_viewModel : ViewModel() {
+class CommunicatorViewModel : ViewModel() {
     val messenger = MutableLiveData<Any>()
     // any : không thể rỗng
 

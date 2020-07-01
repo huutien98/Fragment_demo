@@ -11,17 +11,19 @@ import android.widget.Button
 import androidx.lifecycle.ViewModelProviders
 import com.vncoder.fragment_demo.*
 import com.vncoder.fragment_demo.Item.ItemObject
+import com.vncoder.fragment_demo.PassData.CommunicatorViewModel
+import com.vncoder.fragment_demo.PassData.ComunicatorInterface
 
 
 class Fragment_0 : Fragment() {
 
-    lateinit var interf: Comunicator_interface
+    lateinit var interf: ComunicatorInterface
 
     companion object{
         lateinit var mctx:Context
     }
 
-    private var model: Communicator_viewModel?=null
+    private var model: CommunicatorViewModel?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,13 +32,13 @@ class Fragment_0 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        model = ViewModelProviders.of(activity!!).get(Communicator_viewModel::class.java)
+        model = ViewModelProviders.of(activity!!).get(CommunicatorViewModel::class.java)
     }
 
     override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?): View? {
         val root = inflater.inflate(R.layout.fragment_0,container,false)
 
-        interf = activity as Comunicator_interface
+        interf = activity as ComunicatorInterface
 
         var btn_fragment1 = root.findViewById<View>(R.id.btn_fragment1) as Button
         var btn_fragment2 = root.findViewById<View>(R.id.btn_fragment2) as Button

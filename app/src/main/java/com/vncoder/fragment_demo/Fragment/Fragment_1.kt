@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.vncoder.fragment_demo.Communicator_viewModel
+import com.vncoder.fragment_demo.PassData.CommunicatorViewModel
 import com.vncoder.fragment_demo.R
 
 
@@ -29,16 +29,14 @@ class Fragment_1 : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         val txt = view?.findViewById<View>(R.id.tv_fragment1) as TextView
-        val model = ViewModelProviders.of(activity!!).get(Communicator_viewModel::class.java)
+        val model = ViewModelProviders.of(activity!!).get(CommunicatorViewModel::class.java)
 
         model.messenger.observe(this, object : Observer<Any> {
             override fun onChanged(t: Any?) {
                 txt.text = t!!.toString()
             }
         });
-        {
 
-        }
     }
 
 
