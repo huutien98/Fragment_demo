@@ -3,7 +3,7 @@ package com.vncoder.fragment_demo.PassData
 import com.vncoder.fragment_demo.Item.ItemObject
 
 
-interface ComunicatorInterface {
+interface Comunicator_interface {
     fun passData (data: String)
     fun passDataImage (image:Int)
     fun passDataList (list: ArrayList<ItemObject>?)

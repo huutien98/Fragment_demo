@@ -12,12 +12,12 @@ import androidx.lifecycle.ViewModelProviders
 import com.vncoder.fragment_demo.*
 import com.vncoder.fragment_demo.Item.ItemObject
 import com.vncoder.fragment_demo.PassData.CommunicatorViewModel
-import com.vncoder.fragment_demo.PassData.ComunicatorInterface
+import com.vncoder.fragment_demo.PassData.Comunicator_interface
 
 
 class Fragment_0 : Fragment() {
 
-    lateinit var interf: ComunicatorInterface
+    lateinit var interf: Comunicator_interface
 
     companion object{
         lateinit var mctx:Context
@@ -38,7 +38,7 @@ class Fragment_0 : Fragment() {
     override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?): View? {
         val root = inflater.inflate(R.layout.fragment_0,container,false)
 
-        interf = activity as ComunicatorInterface
+        interf = activity as Comunicator_interface
 
         var btn_fragment1 = root.findViewById<View>(R.id.btn_fragment1) as Button
         var btn_fragment2 = root.findViewById<View>(R.id.btn_fragment2) as Button

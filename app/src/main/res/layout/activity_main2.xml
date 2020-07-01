@@ -7,51 +7,23 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edt_message"/>
     <Button
-        android:text="setClassName"
         android:layout_gravity="center"
-        android:id="@+id/btn_1"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_implicit_intent"
+        android:text="implicit_intent" />
     <Button
-        android:text="setClass"
         android:layout_gravity="center"
-        android:id="@+id/btn_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:text="setComponent"
-        android:layout_gravity="center"
-        android:id="@+id/btn_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:text="componentName"
-        android:layout_gravity="center"
-        android:id="@+id/btn_4"
+        android:text="activity3"
+        android:id="@+id/btn_activity3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <Button
-        android:layout_marginTop="50dp"
-        android:text="ACTION_VIEW"
-        android:layout_gravity="center"
-        android:id="@+id/btn_action_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <Button
-        android:text="ACTION_SEND"
-        android:layout_gravity="center"
-        android:id="@+id/btn_action_send"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <Button
-        android:text="SET DATA "
-        android:layout_gravity="center"
-        android:id="@+id/btn_setdata"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
 </LinearLayout>

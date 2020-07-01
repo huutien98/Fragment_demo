@@ -1,17 +1,23 @@
 package com.vncoder.fragment_demo
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.IntentFilter
+import android.net.ConnectivityManager
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentTransaction
+import com.vncoder.fragment_demo.BroadcastReceiver.ExampleBroadcastReceiver
 import com.vncoder.fragment_demo.Fragment.Fragment_2
 import com.vncoder.fragment_demo.Fragment.Fragment_3
 import com.vncoder.fragment_demo.Fragment.Fragment_4
 import com.vncoder.fragment_demo.Item.ItemObject
-import com.vncoder.fragment_demo.PassData.ComunicatorInterface
+import com.vncoder.fragment_demo.PassData.Comunicator_interface
 import kotlinx.android.synthetic.main.activity_main.*
 
+
 class MainActivity : AppCompatActivity(),
-    ComunicatorInterface {
+    Comunicator_interface {
+    var exampleBroadcastReceiver = ExampleBroadcastReceiver()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -63,7 +69,16 @@ class MainActivity : AppCompatActivity(),
         transaction2.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
         transaction2.commit()
     }
+    override fun onStart() {
+        super.onStart()
+        val filter = IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
+        registerReceiver(exampleBroadcastReceiver, filter)
+    }
 
+    override fun onStop() {
+        super.onStop()
+        unregisterReceiver(exampleBroadcastReceiver)
+    }
 
 
 }

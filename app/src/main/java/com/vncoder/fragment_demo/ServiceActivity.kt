@@ -8,10 +8,11 @@ import com.vncoder.fragment_demo.Service.ExampleService
 import kotlinx.android.synthetic.main.activity_main4.*
 
 
-class MainActivity4 : AppCompatActivity() {
+class ServiceActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main4)
+
 
         startService.setOnClickListener {
             val input: String = edit_text_input.getText().toString()

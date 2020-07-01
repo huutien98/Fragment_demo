@@ -1,9 +1,7 @@
 package com.vncoder.fragment_demo
 
-import android.R.layout
-import android.app.Notification
-import android.app.PendingIntent
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main3.*
@@ -11,19 +9,43 @@ import kotlinx.android.synthetic.main.activity_main3.*
 
 class MainActivity3 : AppCompatActivity() {
      override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main3)
-        btn_send.setOnClickListener {
-            val intentSendText = Intent()
-            intentSendText.action = Intent.ACTION_SEND
-            intentSendText.type = "plain/text"
-            intentSendText.putExtra(Intent.EXTRA_TEXT, edt_message.text.toString())
-            startActivity(Intent.createChooser(intentSendText, "Send message with"))
-    }
-         next.setOnClickListener {
-             intent = Intent(this,MainActivity4::class.java)
+         super.onCreate(savedInstanceState)
+         setContentView(R.layout.activity_main3)
+
+         val messager=intent.getStringExtra(Intent.EXTRA_TEXT)
+         tv_messager.text = messager
+
+         btn_openLink.setOnClickListener {
+             intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/"))
+             startActivity(Intent.createChooser(intent,"Open the door"))
+         }
+
+         btn_main4activity.setOnClickListener {
+             intent= Intent(this,ServiceActivity::class.java)
              startActivity(intent)
          }
-}
+
+         val textReceived = intent.getStringExtra(Intent.EXTRA_TEXT)
+         tv_messageReceived.text = textReceived
+         val textLink = intent.data.toString()
+         tv_messageReceived.text = textLink
+
+
+
+
+         val intent = intent
+         val bundle = intent.extras
+
+             val value1 = bundle?.getString("intent1", "")
+             tv_view1.setText(value1)
+
+
+
+
+
+
+
+     }
+
 
 }
