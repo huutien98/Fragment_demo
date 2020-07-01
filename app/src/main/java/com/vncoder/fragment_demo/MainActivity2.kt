@@ -13,10 +13,31 @@ class MainActivity2 : AppCompatActivity() {
         setContentView(R.layout.activity_main2)
 
         btn_activity3.setOnClickListener {
-            intent = Intent(this,MainActivity3::class.java)
-            intent.putExtra("intent1", "this is a string")
             startActivity(intent)
         }
+
+        btn_string.setOnClickListener {
+            val name = "D0z34g3tm3"
+            val email = "email"
+            val phone = "phone"
+            val intent = Intent(this,MainActivity3::class.java)
+            intent.putExtra("Name",name)
+            intent.putExtra("Email",email)
+            intent.putExtra("Phone",phone)
+            startActivity(intent)
+        }
+        btn_img.setOnClickListener {
+            val img = R.drawable.ic_apple
+            val intent = Intent(this,MainActivity3::class.java)
+            intent.putExtra("img",img)
+            startActivity(intent)
+
+        }
+
+
+
+
+
 
         btn_implicit_intent.setOnClickListener {
             val intentSendText = Intent()

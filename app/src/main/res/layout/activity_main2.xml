@@ -25,5 +25,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
+    <Button
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center"
+        android:text="pust String"
+        android:id="@+id/btn_string"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:layout_gravity="center"
+        android:text="pust Int"
+        android:id="@+id/btn_int"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:layout_gravity="center"
+        android:text="Pust Object"
+        android:id="@+id/btn_object"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:text="image"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:id="@+id/btn_img"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

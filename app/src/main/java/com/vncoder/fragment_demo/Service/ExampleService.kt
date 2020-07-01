@@ -31,6 +31,10 @@ class ExampleService : Service() {
         startForeground(1,notification)
 
         return START_NOT_STICKY
+
+//        Service.START_STICKY : Service được khởi động lại nếu nó bị tắt đi.
+//        Service.START_NOT_STICKY : Service không được khởi động lại.
+//        Service.START_REDELIVER_INTENT : Service được khởi động lại sau khi bị crash và Intent sau khi xử lí sẽ được gửi đi.
     }
 
     override fun onDestroy() {

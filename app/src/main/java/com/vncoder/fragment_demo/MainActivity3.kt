@@ -3,6 +3,7 @@ package com.vncoder.fragment_demo
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main3.*
 
@@ -34,12 +35,15 @@ class MainActivity3 : AppCompatActivity() {
 
 
          val intent = intent
-         val bundle = intent.extras
+         val name = intent.getStringExtra("Name")
+         val email = intent.getStringExtra("Email")
+         val phone = intent.getStringExtra("Phone")
+         val resultTv = findViewById<TextView>(R.id.resultTv)
+         //setText
+         resultTv.text = "Name: "+ name +"\nEmail: "+email+"\nPhone: "+phone
 
-             val value1 = bundle?.getString("intent1", "")
-             tv_view1.setText(value1)
-
-
+         val imagee = intent.getIntExtra("img",0)
+         img_viewintent.setImageResource(imagee)
 
 
 

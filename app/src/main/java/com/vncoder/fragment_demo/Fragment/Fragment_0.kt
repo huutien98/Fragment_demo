@@ -173,12 +173,6 @@ class Fragment_0 : Fragment() {
             val intent = Intent(context,MainActivity2::class.java)
             startActivity(intent)
 
-//            var fragment6 = fragmentManager?.beginTransaction()
-//            fragment6?.replace(
-//                R.id.rightPanel,
-//                Fragment_6()
-//            )
-//            fragment6?.commit()
         }
 
         return root
