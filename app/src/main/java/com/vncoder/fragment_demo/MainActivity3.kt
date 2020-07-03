@@ -32,6 +32,17 @@ class MainActivity3 : AppCompatActivity() {
          tv_messageReceived.text = textLink
 
 
+         val intentBundle = intent
+         val bundle = intent.extras
+         if (bundle != null) {
+             val value1 = bundle.getString("Key_1", "")
+             val value2 = bundle.getInt("Key_2", 0)
+             val value3 = bundle.getBoolean("Key_3", false)
+
+             tv_bundle.setText(value1+ " " +value2+ " " +value3 )
+         }
+
+
 
 
          val intent = intent
@@ -46,7 +57,9 @@ class MainActivity3 : AppCompatActivity() {
          img_viewintent.setImageResource(imagee)
 
 
-
+         val intentObject = intent
+         var itemObject = intent.getSerializableExtra("key")
+         tv_object.setText(itemObject.toString())
 
 
      }

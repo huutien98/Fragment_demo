@@ -52,7 +52,7 @@ class Fragment_0 : Fragment() {
             interf.passActivity(title)
 
             var note = "this is Fragment 1 by ViewModel"
-            model!!.setMsgCommunicator(note)
+            model?.setMsgCommunicator(note)
             var fragment_1 = Fragment_1()
 
             var fragment1 = fragmentManager?.beginTransaction()
@@ -167,10 +167,11 @@ class Fragment_0 : Fragment() {
 
 
         btn_fragment6.setOnClickListener {
-            var title = "FRAGMENT 6"
-            interf.passActivity(title)
+            //var title = "FRAGMENT 6"
+            //interf.passActivity(title)
 
             val intent = Intent(context,MainActivity2::class.java)
+            intent.putExtra("key","FRAGMENT 6")
             startActivity(intent)
 
         }

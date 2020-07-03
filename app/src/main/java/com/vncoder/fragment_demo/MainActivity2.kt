@@ -1,23 +1,36 @@
 package com.vncoder.fragment_demo
 
+import android.content.ComponentName
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.vncoder.fragment_demo.Item.ItemObject
 import kotlinx.android.synthetic.main.activity_main2.*
 
 
 class MainActivity2 : AppCompatActivity() {
+    private var mutableList= mutableListOf<ItemObject>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
+
+        var key = intent.getStringExtra("key")
+        tv_intent.setText(key)
 
         btn_activity3.setOnClickListener {
             startActivity(intent)
         }
 
+        connet.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("content://contacts/people/"))
+            startActivity(intent)
+        }
+
+
+
         btn_string.setOnClickListener {
-            val name = "D0z34g3tm3"
+            val name = "monstar lab lifetime"
             val email = "email"
             val phone = "phone"
             val intent = Intent(this,MainActivity3::class.java)
@@ -34,9 +47,30 @@ class MainActivity2 : AppCompatActivity() {
 
         }
 
+        btn_object.setOnClickListener {
+            var intent = Intent(this,MainActivity3::class.java)
 
+            var itemObject = ItemObject()
+            itemObject.img = 0
+            itemObject.title = "string"
 
+            intent.putExtra("key",itemObject)
+            getIntent().getSerializableExtra("key")
+            startActivity(intent)
 
+        }
+
+        btn_bundle.setOnClickListener {
+            val intent = Intent(this, MainActivity3::class.java)
+            val bundle = Bundle()
+
+            bundle.putString("Key_1", "String") // Truyền một String
+            bundle.putInt("Key_2", 5) // Truyền một Int
+            bundle.putBoolean("Key_3", true) // Truyền một Boolean
+
+            intent.putExtras(bundle)
+            startActivity(intent)
+        }
 
 
         btn_implicit_intent.setOnClickListener {

@@ -34,8 +34,8 @@
         android:layout_height="wrap_content"/>
     <Button
         android:layout_gravity="center"
-        android:text="pust Int"
-        android:id="@+id/btn_int"
+        android:text="pust Bundle"
+        android:id="@+id/btn_bundle"
         android:layout_width="200dp"
         android:layout_height="wrap_content"/>
     <Button
@@ -51,5 +51,17 @@
         android:id="@+id/btn_img"
         android:layout_width="200dp"
         android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textSize="30dp"
+        android:id="@+id/tv_intent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:text="contact"
+        android:id="@+id/connet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+     
 
 </LinearLayout>
